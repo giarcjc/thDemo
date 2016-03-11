@@ -5,7 +5,6 @@
     return {
       restrict: 'E',
       transclude: true,
-      // replace: true,
       templateUrl: 'app/components/outer-wrapper/outer-wrapper.html'
     };
   }

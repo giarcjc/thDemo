@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160310205208) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.string   "type"
+    t.string   "proptype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
