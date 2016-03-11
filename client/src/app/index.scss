@@ -12,6 +12,15 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
+
+body {
+    background-color: #fff;
+    color: #4a4a4a;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    overflow-x: hidden;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -26,6 +35,35 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     width: 50px;
   }
 }
+
+.header-menu-section {
+    background-color: #4259A0;
+    padding: 20px 0;
+}
+.header-logo {
+    background: url(../assets/images/header-logo.png) no-repeat;
+    width: 216px;
+    height: 34px;
+    float: left;
+    margin: 3px 0 0 0;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
