@@ -2,7 +2,6 @@
   'use strict';
 
   /** @ngInject */
-  // function MainController($log, Property) {
   function MainController($log) {
     var vm = this;
     $log.info('hey!');

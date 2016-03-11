@@ -1,9 +1,74 @@
 <outer-wrapper>
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <h1>{{vm.test}}</h1>
+{{vm.test}}
+ <table id="users-table" st-table="vm.users"
+           class="table table-fixed table-striped table-hover table-responsive">
+        <thead>
+        <tr class="table-header">
+        	<th st-sort="assetId" class="col-xs-1 col-sm-1 left-justified">ID</th>
+        	<th st-sort="type" class="col-xs-2 col-sm-2 left-justified">Property Type</th>
+            <th st-sort="name" st-sort-default="true" class="col-xs-2 col-sm-2">Address 1</th>
+            <th st-sort="name" st-sort-default="true" class="col-xs-2 col-sm-2">Address 2</th>
+            
+            <th st-sort="totalShares" class="col-xs-2 col-sm-2 right-justified">City</th>
+            <th st-sort="pricePerShare" class="col-xs-1 col-sm-1 right-justified">State</th>
+            <th st-sort="totalValue" class="col-xs-2 col-sm-2 right-justified">Postal Code</th>
+   
+            <th class="col-xs-1 col-sm-1"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in vm.filteredusers= ( vm.users | filter: vm.search)" class="table-row-height">
+
+            <td class="col-xs-2 col-sm-2 table-header-container left-justified">
+                {{row.id}}
+            </td>
+            <td class="col-xs-2 col-sm-2 table-header-container left-justified">
+                {{row.type}}
+            </td>
+            <td class="col-xs-1 col-sm-1 table-header-container left-justified">
+                {{row.address1}}
+            </td>
+            <td class="col-xs-2 col-sm-2 table-header-container right-justified">
+                {{row.address2}}
+            </td>
+            <td class="col-xs-1 col-sm-1 table-header-container right-justified">
+                {{row.city}}
+            </td>
+            <td class="col-xs-2 col-sm-2 table-header-container right-justified">
+                {{row.state}}
+            </td>
+            <td class="col-xs-1 col-sm-1 table-header-container center-justified">
+                {{row.zip}}
+            </td>
+            <td class="col-xs-1 col-sm-1 text-right table-header-container-null">
+                <!-- <div class="table-btn-wrapper">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-info dropdown-toggle table-btn"
+                                data-toggle="dropdown">
+                            <i class="fa fa-gear"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="data-dropdown-menu dropdown-menu table-btn-dropdown" role="menu">
+                            <li><a href="">Make a Cash Contribution</a></li>
+                            <li><a href="">Transfer In Cash</a></li>
+                            <li><a href="">Make an Investment</a></li>
+                            <li><a href="">Request a Cash Contribution</a></li>
+                            <li><a href="">Submit Documents</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="table-results">
+        <p>
+            {{vm.filteredusers.length}} Total Properties
+        </p>
     </div>
-  </div>  
+
 </outer-wrapper>
 	
 	
