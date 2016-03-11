@@ -10,5 +10,5 @@ Property.create([
 ])
 
 User.create([
-  { username: 'demotester', email: 'dt123@demo.io', password: 'password', valid: true}
+  { username: 'demotester', email: 'dt123@demo.io', password: 'password', agreed_terms: true}
 ])
