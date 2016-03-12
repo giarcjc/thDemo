@@ -23,6 +23,8 @@ command -v rails >/dev/null 2>&1 || { echo >&2 "I require rails but it's not ins
 ECHO "found rails version: "
 rails -v
 
+bundle
+rake db:migrate
 cd client
 bower install
 npm install

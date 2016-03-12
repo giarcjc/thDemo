@@ -14,12 +14,12 @@
         controller: 'MainController',
         controllerAs: 'vm'
       })
-      .state('users', {
-        url: '/users',
-        templateUrl: 'app/users/users.html',
-        controller: 'UsersController',
-        controllerAs: 'vm'
-      }) 
+      // .state('users', {
+      //   url: '/users',
+      //   templateUrl: 'app/users/users.html',
+      //   controller: 'UsersController',
+      //   controllerAs: 'vm'
+      // }) 
       .state('properties', {
         url: '/properties',
         templateUrl: 'app/properties/properties.html',

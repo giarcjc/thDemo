@@ -5,6 +5,14 @@
   function MainController($log, Property, toastr) {
     var vm = this;
 
+    vm.validate = function(p){
+      if(!p || !p.address1 || !p.city || !p.state || !p.zip || !p.kind ){
+        return false; 
+      } else {
+        return p; 
+      }
+    }
+
      vm.propertyKindOptions= [
         'Apartment',
         'Cabin',
@@ -14,8 +22,8 @@
       ]
 
     vm.createProperty = function(property) {
-      $log.info('ok so far')
-       new Property({
+      if(vm.validate(property)){
+        new Property({
             address1: property.address1,
             address2: property.address2,
             city: property.city, 
@@ -30,9 +38,10 @@
               toastr.error('Something went wrong!', 'Error!');
             }
         })
+      } else {
+        toastr.error('There are invalid form fields!', 'Error!');
+      }
     };
-       
-
   }
 
   angular

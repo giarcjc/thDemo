@@ -8,6 +8,7 @@ A Quick Demo of Anguar Rails CRUD app
 	* Gulp ( npm install -g gulp )
 	* Ruby (using 2.3.0 -- see http://railsapps.github.io/install-ruby.html
 	* Rails (useing 4.2.5.2 -- see http://railsapps.github.io/install-ruby.html)
+	* Bundler ( gem install bundler )
 
 * Installation
 
@@ -17,4 +18,8 @@ A Quick Demo of Anguar Rails CRUD app
 
 	`./install.sh`
 
-After installation you can just `cd client` and run `gulp fullstack` to start the app.
+* Running the App
+
+	`cd client` 
+
+	`gulp fullstack` 
