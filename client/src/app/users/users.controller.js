@@ -2,14 +2,14 @@
 	'use strict';
 
 	/**@ngInject **/
-	function UsersController(User){
-	  var vm = this;
-	  vm.test = 'Users test';
+	function UsersController(){
+	  // var vm = this;
+	  // vm.test = 'Users test';
 	}
 
-	 User.query().then(function(result){
-			vm.users = result;
-		});
+	 // User.query().then(function(result){
+		// 	vm.users = result;
+	 // });
 
 
 

@@ -2,27 +2,27 @@
   'use strict';
 
   /** @ngInject */
-  function MainController($log) {
+  function MainController($log, Property, toastr) {
     var vm = this;
-    $log.info('hey!');
-    $log.info(vm);
-     vm.test = 'test';
 
-    // vm.showToastr = function(){
-    //   $log.info('hey!');
-    // }
+    vm.createProperty = function(property) {
+      $log.info('ok so far')
 
-    // vm.createProperty = function(property) {
-    //   $log.info('ok so far')
-
-    //    new Property({
-    //         address1: property.address1,
-    //         address2: property.address2,
-    //         city: property.city, 
-    //         state: property.state,
-    //         postalcode: property.postalcode 
-    //       }).create();
-    // };
+       new Property({
+            address1: property.address1,
+            address2: property.address2,
+            city: property.city, 
+            state: property.state,
+            postalcode: property.postalcode 
+          }).create().then(function(response){
+            if(response){
+              $log.info(response);
+              toastr.success('Property Created!', 'Success!');
+            } else {
+              toastr.error('Something went wrong!', 'Error!');
+            }
+        })
+    };
        
 
   }
