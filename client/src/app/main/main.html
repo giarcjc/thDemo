@@ -1,42 +1,69 @@
 <outer-wrapper> 
 
+
 <h3>Property Address</h3>
-
-<div class="row">
-  <div>
-    <h2>Create Property</h2>
-    <form role="form" name="property-form" ng-submit="vm.createProperty(vm.property)" 
-      class="form col-lg-8 col-md-8 col-xs-8" novalidate>
-    
-      <div class="col-md-9 col-xs-12">
-        <label class="control-label" for="property_address1">Street Address:</label>
-        <input id="property_address1" name="property_address1" class="form-control" placeholder="Enter a location" ng-model="vm.property.address1" required>
-      </div>
-
-      <div class="col-md-3 col-xs-12">
-        <label class="control-label" for="property_address2">Apt, Suite, Building.</label>
-        <input id="property_address2" name="property_address2" class="form-control" placeholder="optional" ng-model="vm.property.address2">
-      </div>
-      
-      <div class="col-md-6 col-xs-12">
-        <label class="control-label" for="property_city">City:</label>
-        <input id="property_city" name="property_city" class="form-control" placeholder="City" ng-model="vm.property.city" required>
-      </div>
-      
-      <div class="col-md-3 col-xs-12">
-        <label class="control-label" for="property_state">State:</label>
-        <input id="property_state" name="property_state" class="form-control" placeholder="State" ng-model="vm.property.state" required>
-      </div>
-      
-      <div class="col-md-3 col-xs-12">
-        <label class="control-label" for="property_postalcode">Zip:</label>
-        <input id="property_postalcode" name="property_postalcode" class="form-control" placeholder="Zip" ng-model="vm.property.zip" required>
-      </div>
-
-      <button id="save-property-btn" type="submit" class="btn btn-succeess">Save</button>
-
-    </form>
+<div class="col-lg-12 col-md-12 col-sm-12">
+  <div class="form col-lg-2 col-md-2 col-xs-2">
+    <ul class="sidebar">
+      <li>Overview</li>
+      <li>Description</li>
+      <li>Amenities</li>
+      <li>Pricing & Terms</li>
+      <li>Photos</li>
+    </ul>
   </div>
-</div>
+  
+      <div class="form col-lg-10 col-md-10 col-xs-10"> 
+        <h2>Create Property</h2>
+        <form role="form" name="property-form" ng-submit="vm.createProperty(vm.property)" 
+          novalidate>
+          <div class="row">
+            <div class="col-md-9 col-xs-12">
+              <label class="control-label" for="property_address1">Street Address:</label>
+              <input id="property_address1" name="property_address1" class="form-control" placeholder="Enter a location" ng-model="vm.property.address1" required>
+            </div>
 
+            <div class="col-md-3 col-xs-12">
+              <label class="control-label" for="property_address2">Apt, Suite, Building.</label>
+              <input id="property_address2" name="property_address2" class="form-control" placeholder="optional" ng-model="vm.property.address2">
+            </div>
+          </div>
+          <div class="row"> 
+            <div class="col-md-6 col-xs-12">
+              <label class="control-label" for="property_city">City:</label>
+              <input id="property_city" name="property_city" class="form-control" placeholder="City" ng-model="vm.property.city" required>
+            </div>
+            
+            <div class="col-md-3 col-xs-12">
+              <label class="control-label" for="property_state">State:</label>
+              <input id="property_state" name="property_state" class="form-control" placeholder="State" ng-model="vm.property.state" required>
+            </div>
+            
+            <div class="col-md-3 col-xs-12">
+              <label class="control-label" for="property_postalcode">Zip:</label>
+              <input id="property_postalcode" name="property_postalcode" class="form-control" placeholder="Zip" ng-model="vm.property.zip" required>
+            </div>
+          </div>
+         
+
+           <div class="col-md-3 col-xs-12">
+              <label class="control-label" for="property_postalcode">Property Type:</label>
+              <div ng-repeat="kind in vm.propertyKindOptions" >
+                <div class="row"><span>{{kind}}
+                  <input type="radio" ng-model="vm.property.kind" value="{{kind}}" class="pull-right">
+                </div>
+              </div>
+          
+          </div>    
+
+
+          <div class="row">
+            <button id="save-property-btn" type="submit" class="pull-right btn btn-succeess">Save</button>
+          </div>
+        </form>
+      </div>
+
+
+</div>   
+{{vm.property}}
 </outer-wrapper>

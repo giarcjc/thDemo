@@ -62,8 +62,50 @@ body {
 }
 
 
+#post-property .container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
 
 
+#post-property #posting-main {
+    margin: 0;
+}
+
+.sidebar {
+    background-color: #f9f9f9;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 40px;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+
+
+.sidebar ul li {
+    background-color: #fbfbfb;
+    border-right-width: 0;
+}
+
+ .sidebar ul li {
+    margin-top: 12px;
+    color: #d4d4d4;
+    font-size: 26px;
+    padding-right: 15px;
+}
+
+.row {
+  margin:10px 0 10px
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
