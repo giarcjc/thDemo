@@ -5,7 +5,7 @@
 	function Property(railsResourceFactory){
 	  return railsResourceFactory({
 	    url: '/api/properties',
-	    name: 'properties'
+	    name: 'property'
 	  });
 	}
 
