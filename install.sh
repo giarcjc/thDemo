@@ -11,6 +11,10 @@ command -v bower >/dev/null 2>&1 || { echo >&2 "I require bower but it's not ins
 ECHO "found bower version: "
 bower -v
 
+command -v gulp >/dev/null 2>&1 || { echo >&2 "I require gulp but it's not installed. Run npm install -g gulp. Aborting."; exit 1; }
+ECHO "found gulp version: "
+gulp -v
+
 command -v ruby >/dev/null 2>&1 || { echo >&2 "I require ruby but it's not installed. Please see http://railsapps.github.io/install-ruby.html. Aborting."; exit 1; }
 ECHO "found ruby version: "
 ruby -v
@@ -19,6 +23,6 @@ command -v rails >/dev/null 2>&1 || { echo >&2 "I require rails but it's not ins
 ECHO "found rails version: "
 rails -v
 
-cd client
-bower install
-npm install
+# cd client
+# bower install
+# npm install
