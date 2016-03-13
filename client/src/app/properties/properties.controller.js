@@ -2,11 +2,12 @@
 	'use strict';
 
 	/**@ngInject **/
-	function PropertiesController(Property){
+	function PropertiesController($log, PropertiesService){
 	  var vm = this;
 	  vm.test = 'Properties ttest';
 
-	  Property.query().then(function(result){
+	  PropertiesService.getProperties()
+	  	.then(function(result){
 			vm.properties = result;
 		});
 
