@@ -6,7 +6,7 @@ class CreateProperties < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip
-      t.string :proptype
+      t.string :kind
 
       t.timestamps null: false
     end
