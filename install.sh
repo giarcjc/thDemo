@@ -19,11 +19,18 @@ command -v ruby >/dev/null 2>&1 || { echo >&2 "I require ruby but it's not insta
 ECHO "found ruby version: "
 ruby -v
 
+command -v postgres >/dev/null 2>&1 || { echo >&2 "I require postgres but it's not installed. On Mac try brew install postgresql or see http://stackoverflow.com/questions/4827092/unable-to-install-pg-gem"; exit 1; }
+ECHO "found postgres version: "
+postgres --version
+
 command -v rails >/dev/null 2>&1 || { echo >&2 "I require rails but it's not installed. Please see http://railsapps.github.io/install-ruby.html. Aborting."; exit 1; }
 ECHO "found rails version: "
 rails -v
 
-bundle
+gem install rails-api
+
+bundle install
+rake db:create
 rake db:migrate
 cd client
 bower install

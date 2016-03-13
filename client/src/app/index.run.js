@@ -6,9 +6,9 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock(defaultErrorMessageResolver) {
 
-    $log.debug('runBlock end');
+    
   }
 
 })();
