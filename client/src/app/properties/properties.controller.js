@@ -2,7 +2,7 @@
 	'use strict';
 
 	/**@ngInject **/
-	function PropertiesController($log, $filter, PropertiesService){
+	function PropertiesController($log, $filter, $state, PropertiesService){
 	  var vm = this;
 
 	  // var orderBy = $filter('orderBy');
@@ -22,7 +22,13 @@
 			vm.properties = result;
 		});
 
-
+	  	vm.deleteProperty = function(id){
+	  	  $log.info(id);
+	  	  return PropertiesService.deleteProperty(id)
+	  	  	.then(function(){
+	  	  		 $state.reload();
+	  	  	});
+	  	}
 
 	}
 

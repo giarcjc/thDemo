@@ -37,9 +37,12 @@
           });
       }   
 
-  	  // service.deleteProperty = function(id){
-  	  // 	return Property.delete(id);
-  	  // }	
+  	  service.deleteProperty = function(id){
+        return Property.get(id)
+          .then(function(result){
+              result.delete();
+          })
+  	  }	
 
 	}
 

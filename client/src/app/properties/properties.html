@@ -63,7 +63,7 @@
                     {{row.zip}}
                 </td>
                 <td class="col-xs-1 col-sm-1 text-right table-header-container-null">
-                    <div class="table-btn-wrapper">
+                  <!--   <div class="table-btn-wrapper">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-info dropdown-toggle table-btn" data-toggle="dropdown">
                                 <i class="fa fa-gear"></i>
@@ -73,7 +73,8 @@
                                 <li><a href="">Do action 1</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
+                    <a href="#" ng-click="vm.deleteProperty(row.id)">Delete</a> 
                 </td>
 
             </tr>
