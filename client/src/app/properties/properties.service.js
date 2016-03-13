@@ -20,7 +20,13 @@
           }).create();
   		}	
 
-  	  
+  	  service.getPropertyById = function(id){
+  	  	return Property.get(id);
+  	  }		
+
+  	  // service.deleteProperty = function(id){
+  	  // 	return Property.delete(id);
+  	  // }	
 
 	}
 

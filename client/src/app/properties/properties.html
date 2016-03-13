@@ -1,72 +1,84 @@
 <outer-wrapper>
 
- <table id="properties-table" st-table="vm.properties"
-           class="table table-fixed table-striped table-hover table-responsive">
-        <thead>
-        <tr class="table-header">
-        	<th st-sort="assetId" class="col-xs-1 col-sm-1 left-justified">ID</th>
-        	<th st-sort="type" class="col-xs-2 col-sm-2 left-justified">Property Type</th>
-            <th st-sort="name" st-sort-default="true" class="col-xs-2 col-sm-2">Address 1</th>
-            <th st-sort="name" st-sort-default="true" class="col-xs-2 col-sm-2">Address 2</th>
-            
-            <th st-sort="totalShares" class="col-xs-2 col-sm-2 right-justified">City</th>
-            <th st-sort="pricePerShare" class="col-xs-1 col-sm-1 right-justified">State</th>
-            <th st-sort="totalValue" class="col-xs-2 col-sm-2 right-justified">Postal Code</th>
-   
-            <th class="col-xs-1 col-sm-1"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="row in vm.filteredproperties = ( vm.properties | filter: vm.search)" class="table-row-height">
+    <div class="col-lg-10 col-md-10">
+        <form name="searchform" class="navbar-left search-container" role="search">
+            <div class="form-group">
+                <div class="property-search">
+                    <input ng-model="searchTerm.$"
+                           id="searchTerm" type="text"
+                           class="form-control" placeholder="Search" ng-minlength="3"
+                           ng-change="vm.showResults(searchTerm)" ng-model-options="vm.modelOptions">
+                </div> 
+            </div>
+        </form>
 
-            <td class="col-xs-2 col-sm-2 table-header-container left-justified">
-                {{row.id}}
-            </td>
-            <td class="col-xs-2 col-sm-2 table-header-container left-justified">
-                {{row.kind}}
-            </td>
-            <td class="col-xs-1 col-sm-1 table-header-container left-justified">
-                {{row.address1}}
-            </td>
-            <td class="col-xs-2 col-sm-2 table-header-container right-justified">
-                {{row.address2}}
-            </td>
-            <td class="col-xs-1 col-sm-1 table-header-container right-justified">
-                {{row.city}}
-            </td>
-            <td class="col-xs-2 col-sm-2 table-header-container right-justified">
-                {{row.state}}
-            </td>
-            <td class="col-xs-1 col-sm-1 table-header-container center-justified">
-                {{row.zip}}
-            </td>
-            <td class="col-xs-1 col-sm-1 text-right table-header-container-null">
-                <!-- <div class="table-btn-wrapper">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-info dropdown-toggle table-btn"
-                                data-toggle="dropdown">
-                            <i class="fa fa-gear"></i>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="data-dropdown-menu dropdown-menu table-btn-dropdown" role="menu">
-                            <li><a href="">Make a Cash Contribution</a></li>
-                            <li><a href="">Transfer In Cash</a></li>
-                            <li><a href="">Make an Investment</a></li>
-                            <li><a href="">Request a Cash Contribution</a></li>
-                            <li><a href="">Submit Documents</a></li>
-                        </ul>
+
+        <div class="table-results pull-right">
+            <p>
+                {{vm.filteredproperties.length}} Total Properties
+            </p>
+        </div>
+
+    </div>
+    <div class="col-lg-10 col-md-10">
+
+        <table id="properties-table" st-table="vm.properties"
+               class="table table-fixed table-striped table-hover table-responsive col-xs-10 col-sm-10">
+            <thead>
+            <tr class="table-header">
+            	<th st-sort="assetId" class="col-xs-1 col-sm-1 left-justified">ID</th>
+            	<th st-sort="type" class="col-xs-1 col-sm-1 left-justified">Property Type</th>
+                <th st-sort="name" st-sort-default="true" class="col-xs-2 col-sm-2">Address 1</th>
+                <th st-sort="name" st-sort-default="true" class="col-xs-1 col-sm-1">Address 2</th>
+                
+                <th st-sort="totalShares" class="col-xs-1 col-sm-1 right-justified">City</th>
+                <th st-sort="pricePerShare" class="col-xs-1 col-sm-1 right-justified">State</th>
+                <th st-sort="totalValue" class="col-xs-1 col-sm-1 right-justified">Postal Code</th>
+       
+                <th class="col-xs-1 col-sm-1"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.filteredproperties = ( vm.properties | filter:searchTerm)" class="table-row-height">
+
+                <td class="col-xs-1 col-sm-1 table-header-container left-justified">
+                    {{row.id}}
+                </td>
+                <td class="col-xs-1 col-sm-1 table-header-container left-justified">
+                    {{row.kind}}
+                </td>
+                <td class="col-xs-2 col-sm-2 table-header-container left-justified">
+                    <a ui-sref="property-detail({id:row.id})">{{row.address1}}</a>
+                </td>
+                <td class="col-xs-1 col-sm-1 table-header-container right-justified">
+                    {{row.address2}}
+                </td>
+                <td class="col-xs-1 col-sm-1 table-header-container right-justified">
+                    {{row.city}}
+                </td>
+                <td class="col-xs-1 col-sm-1 table-header-container right-justified">
+                    {{row.state}}
+                </td>
+                <td class="col-xs-1 col-sm-1 table-header-container center-justified">
+                    {{row.zip}}
+                </td>
+                <td class="col-xs-1 col-sm-1 text-right table-header-container-null">
+                    <div class="table-btn-wrapper">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-info dropdown-toggle table-btn" data-toggle="dropdown">
+                                <i class="fa fa-gear"></i>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="data-dropdown-menu dropdown-menu table-btn-dropdown" role="menu">
+                                <li><a href="">Do action 1</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div> -->
-            </td>
+                </td>
 
-        </tr>
-        </tbody>
-    </table>
-
-    <div class="table-results">
-        <p>
-            {{vm.filteredproperties.length}} Total Properties
-        </p>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 

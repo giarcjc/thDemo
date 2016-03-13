@@ -11,6 +11,7 @@
     "angular-sanitize": "~1.4.2",
     "angular-toastr": "~1.5.0",
     "angular-ui-router": "~0.2.15",
+    "angular-xeditable": "~0.1.9", 
     "angularjs-rails-resource": "~2.0.0",
     "animate.css": "~3.4.0",
     "bootstrap-sass": "~3.3.5",

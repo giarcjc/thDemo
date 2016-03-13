@@ -25,6 +25,12 @@
         templateUrl: 'app/properties/properties.html',
         controller: 'PropertiesController',
         controllerAs: 'vm'
+      })
+      .state('property-detail', {
+        url: '/properties/:id',
+        templateUrl: 'app/properties/property-detail.html',
+        controller: 'PropertyDetailController',
+        controllerAs: 'vm'
       });
 
     $urlRouterProvider.otherwise('/');

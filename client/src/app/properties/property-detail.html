@@ -1,0 +1,73 @@
+<outer-wrapper>
+<h2 class="col-md-5">Details for Property</h2>
+<!-- {{vm.property.address1}}
+{{vm.property.address2}}
+{{vm.property.city}}
+{{vm.property.state}}
+{{vm.property.zip}}
+{{vm.property.kind}} -->
+
+
+ <div class="data-container col-xs-12">
+    <fieldset>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">Address 1</div>
+            <div editable-text="vm.property.address1"
+                 id="address1" e-name="address1"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.address1 || 'Not set'  }}
+            </div>
+        </div>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">Address 2</div>
+            <div editable-text="vm.property.address2"
+                 id="address2" e-name="address2"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.address2 || 'Not set'  }}
+            </div>
+        </div>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">City</div>
+            <div editable-text="vm.property.city"
+                 id="city" e-name="city"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.city || 'Not set'  }}
+            </div>
+        </div>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">State</div>
+            <div editable-text="vm.property.state"
+                 id="state" e-name="state"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.state || 'Not set'  }}
+            </div>
+        </div>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">Zip</div>
+            <div editable-text="vm.property.zip"
+                 id="zip" e-name="zip"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.zip || 'Not set'  }}
+            </div>
+        </div>
+
+        <div class="col-xs-6" >
+            <div class="edit-label col-xs-2">Property Type</div>
+            <div editable-text="vm.property.kind"
+                 id="kind" e-name="kind"
+                 class="editAreaText col-xs-4">
+                {{ vm.property.kind || 'Not set'  }}
+            </div>
+        </div>
+
+
+
+	</fieldset>
+</div>
+
+</outer-wrapper>

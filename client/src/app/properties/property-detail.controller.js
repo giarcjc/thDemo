@@ -2,25 +2,24 @@
 	'use strict';
 
 	/**@ngInject **/
-	function PropertiesController($log, $filter, PropertiesService){
+	function PropertyDetailController($log, $stateParams, PropertiesService){
 	  var vm = this;
-
-	  // var orderBy = $filter('orderBy');
 
       vm.modelOptions = {
         getterSetter: true,
         allowInvalid: true,
         updateOn: 'default blur',
-        debounce: { // <-- can be an object as well
+        debounce: { 
           default: 300,
           blur: 0
         }
       };
 
-	  PropertiesService.getProperties()
+	  PropertiesService.getPropertyById($stateParams.id)
 	  	.then(function(result){
-			vm.properties = result;
+			vm.property = result;
 		});
+
 
 
 
@@ -28,5 +27,5 @@
 
 
 	angular.module('thDemo')
-	.controller('PropertiesController', PropertiesController)
+	.controller('PropertyDetailController', PropertyDetailController)
 })();
