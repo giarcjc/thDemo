@@ -20,7 +20,11 @@
 			vm.property = result;
 		});
 
-
+	  vm.updateProperty = function(){
+	  	$log.info('now property: ' + vm.property);
+	  	PropertiesService.updateProperty(vm.property);
+	  }
+	  	
 
 
 	}

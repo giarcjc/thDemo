@@ -116,6 +116,10 @@ body {
   margin:10px 0 10px
 }
 
+.editable-click, a.editable-click {
+  border: none;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

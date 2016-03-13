@@ -3,6 +3,6 @@
 
   angular
     .module('thDemo', ['ngAnimate', 'rails', 'ngCookies', 'ngSanitize', 
-    	'ngMessages', 'ui.router', 'ui.bootstrap', 'toastr', 'jcs-autoValidate']);
+    	'ngMessages', 'ui.router', 'ui.bootstrap', 'toastr', 'jcs-autoValidate', 'xeditable']);
 
 })();

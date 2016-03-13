@@ -24,6 +24,19 @@
   	  	return Property.get(id);
   	  }		
 
+      service.updateProperty = function(property){
+        return Property.get(property.id)
+          .then(function(result){
+            result.address1 = property.address1,
+            result.address2 = property.address2,
+            result.city = property.city, 
+            result.state = property.state,
+            result.zip = property.zip,
+            result.kind = property.kind
+            result.update();
+          });
+      }   
+
   	  // service.deleteProperty = function(id){
   	  // 	return Property.delete(id);
   	  // }	
