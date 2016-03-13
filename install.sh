@@ -28,8 +28,8 @@ ECHO "found rails version: "
 rails -v
 
 gem install rails-api
-
 bundle install
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 rake db:create
 rake db:migrate
 cd client
