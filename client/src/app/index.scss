@@ -120,6 +120,11 @@ body {
   border: none;
 }
 
+.modal-footer a, .modal-footer button {
+  margin: 0 5px; 
+}
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

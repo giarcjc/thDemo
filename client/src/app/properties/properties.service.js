@@ -2,7 +2,7 @@
 	'use strict';
 
 	/**@ngInject **/
-	function PropertiesService(Property){
+	function PropertiesService($log, Property){
 	  var service = this;
 
 	  service.getProperties = function(){
@@ -38,9 +38,9 @@
       }   
 
   	  service.deleteProperty = function(id){
-        return Property.get(id)
+        return service.getPropertyById(id)
           .then(function(result){
-              result.delete();
+            result.delete();
           })
   	  }	
 

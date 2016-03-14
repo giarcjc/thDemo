@@ -1,0 +1,10 @@
+<div class="modal-header"><h1 class="modal-title">Delete Property</h5></div>	
+<div class="modal-body">
+	<p>Are you certain you want to delete the property at <strong>{{vm.prop.address1}}</strong>?</p>
+</div>
+<div class="modal-footer">
+    <a class="modal-cancel" href="" ng-click="vm.cancel()">Cancel</a>
+    <button class="btn btn-primary modal-submit"
+            ng-click="vm.deleteProperty(vm.prop.id)">Delete
+    </button>
+</div>
