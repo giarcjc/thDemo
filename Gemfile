@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.0'
 gem 'rails', '4.2.5.2'
 
 gem 'rails-api'
@@ -9,10 +9,8 @@ gem 'spring', :group => :development
 gem 'rspec-rails',  :group => :test
 
 gem 'pg'
+gem 'rails_12factor', :group => :production
 
-group :production do
-  gem 'rails_12factor'
-end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
